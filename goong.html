@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio - MUHAMAD PADIL </title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      /* CSS Reset & Variable */
+      :root {
+        --primary-color: #0d6efd;
+        --primary-dark: #0b5ed7;
+        --secondary-color: #495057;
+        --bg-light: #f8f9fa;
+        --bg-white: #ffffff;
+        --text-dark: #212529;
+        --text-muted: #6c757d;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background-color: var(--bg-light);
+        color: var(--text-dark);
+        line-height: 1.6;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* Navbar */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: var(--bg-white);
+        box-shadow: var(--shadow);
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 5%;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        justify-content: flex-end;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+        justify-content: center;
+      }
+
+      .nav-links a {
+        font-weight: 500;
+        color: var(--text-dark);
+        transition: var(--transition);
+      }
+
+      .nav-links a:hover {
+        color: var(--primary-color);
+      }
+
+      /* Hero / Beranda */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6rem 5% 2rem;
+        background: linear-gradient(135deg, #eef2f3 0%, #8e9eab 100%);
+        text-align: center;
+        
+      }
+
+      .hero-content h1 {
+        font-size: 2.8rem;
+        margin-bottom: 0.5rem;
+        border-radius: 100px;
+      }
+
+      .hero-content h1 span {
+        color: var(--primary-color);
+        border-radius: 100px;
+      }
+
+      .hero-content h3 {
+        font-size: 1.5rem;
+        color: var(--secondary-color);
+        margin-bottom: 1rem;
+      }
+
+      .hero-content p {
+        max-width: 600px;
+        margin: 0 auto 1.5rem;
+        color: var(--text-dark);
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background-color: var(--primary-color);
+        color: #fff;
+        border-radius: 5px;
+        font-weight: 500;
+        transition: var(--transition);
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background-color: var(--primary-dark);
+      }
+
+      /* General Section Styling */
+      section {
+        padding: 5rem 5%;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .section-title h2 {
+        font-size: 2.2rem;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 0.5rem;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 3px;
+        background-color: var(--primary-color);
+      }
+
+      /* Tentang Saya */
+      .about-content {
+        background: var(--bg-white);
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      /* Pendidikan & Pengalaman (Timeline) */
+      .timeline {
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        border-left: 3px solid var(--primary-color);
+        padding-left: 2rem;
+      }
+
+      .timeline-item {
+        margin-bottom: 2rem;
+        position: relative;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -2.6rem;
+        top: 5px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: var(--primary-color);
+      }
+
+      .timeline-card {
+        background: var(--bg-white);
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+      }
+
+      .timeline-card h3 {
+        color: var(--primary-color);
+      }
+
+      .timeline-card .date {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+
+      /* Layanan */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .service-card {
+        background: var(--bg-white);
+        padding: 2rem;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: var(--shadow);
+        transition: var(--transition);
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .service-card i {
+        font-size: 2.5rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      /* Portofolio */
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .portfolio-card {
+        background: var(--bg-white);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 1.5rem;
+      }
+
+      .portfolio-card h3 {
+        margin-bottom: 0.5rem;
+      }
+
+      .portfolio-card p {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        margin-bottom: 1rem;
+      }
+
+      /* Kontak Saya */
+      .contact-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .contact-info,
+      .contact-form {
+        background: var(--bg-white);
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        flex: 1 1 300px;
+      }
+
+      .contact-info div {
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .contact-info i {
+        font-size: 1.2rem;
+        color: var(--primary-color);
+      }
+
+      .contact-form form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 1.5rem;
+        background: var(--text-dark);
+        color: #fff;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none; /* Dapat */
+        }
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+      }
+      .profile-img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        border: 3px solid #0d6efd;
+        margin-bottom: 16px;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo"></div>
+        <ul class="nav-links">
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#tentang">Tentang Saya</a></li>
+        <li><a href="#pendidikan">Pendidikan</a></li>
+        <li><a href="#layanan">Layanan</a></li>
+        <li><a href="#kontak">Kontak Saya</a></li>
+      </ul>
+    </nav>
+    <section id="beranda" class="hero">
+      <class="hero-content">
+        <h1>
+           </h1>
+          <h1> </h1>
+        <img src="assets/img/shrt.jpg" style="width: 300px;height: 300px;border-radius: 50%;">
+            
+          
+        <h1> M.PADIL  </h1>
+        <h3>PELAJAR MUDA INDONESIA</h3>
+        <p>
+          kumpulan informasi, data atau dokumen yang menunjukkan pendidikan dan
+          prestasi.
+        </p>
+        <a href="#kontak" class="btn">Hubungi Saya</a>
+      </div>
+    </section>
+
+    <section id="tentang">
+      <div class="section-title">
+        <h2>Tentang Saya</h2>
+      </div>
+      <div class="about-content">
+        <p>
+          Saya adalah seorang <strong>seorang pelajar indonesia</strong> saya
+          pernah bersekolah di
+          <strong> mi al-mubarokah,smp nazwa asy-syarif </strong> dan sekarang
+          saya sedang menempuh pelajaran di
+          <strong>smk negeri 1 rongga</strong> saya ingin menjadi siswa yang
+          berprestasi,rajin, terampil dan gembira,semoga saya lulus di sekolah
+          ini,agar bisa menggapai cita-cita saya,bisa membanggakan orang tua
+          saya,dan bisa membuat mereka bahagia.
+        </p>
+      </div>
+    </section>
+
+    <section id="pendidikan" style="background-color: #fff">
+      <div class="section-title"></div>
+      <div class="timeline">
+        <h2>CITA-CITA</h2>
+        <div class="timeline-item">
+          <div class="timeline-card">
+            <img src="assets/img/ymh.png" width="150px" height="125px" />
+            <img src="assets/img/hnd.png" width="160px" height="125px" />
+            <h3>PT YAMAHA / PT HONDA</h3>
+            <span class="date"></span>
+            <p></p>
+            <p>
+              Cita-cita saya ingin bergabung dengan <strong> PT Yamaha / PT Honda</strong> karena
+              perusahaan ini merupakan pemimpin pasar industri otomotif yang
+              memiliki reputasi global yang sangat baik. Produk-produk yang
+              dihasilkan sudah terbukti unggul dalam hal inovasi, kualitas, dan
+              keselamatan. Bekerja di perusahaan dengan standar manufaktur
+              tingkat internasional seperti ini akan memberikan saya kesempatan
+              untuk belajar dari sistem kerja terbaik dan berkontribusi langsung
+              dalam menjaga mutu produk yang dipercaya oleh jutaan masyarakat.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="HOBI" style="background-color: #fff">
+    <div class="section-title"> </div>
+      <div class="timeline">
+        <h2>HOBI</h2>
+        <div class="timeline-item">
+          <div class="timeline-card">
+            <img src="assets/img/pk.webp" width="110px" height="100px" />
+            <img src="assets/img/ftsl.avif" width="125px" height="120px" />
+            <h3>SEPAK BOLA DAN FUTSAL</h3>
+            <span class="date"></span>
+            <p></p>
+            <p>
+              Hobi <strong>sepak bola dan futsal</strong> sangat diminati karena menyehatkan
+              tubuh, seru, dan menjadi sarana efektif untuk bersosialisasi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pendidikan" style="background-color: #fff">
+      <div class="section-title"></div>
+      <div class="timeline">
+        <h2>Pendidikan</h2>
+        <div class="timeline-item">
+          <div class="timeline-card">
+            <img src="assets/img/dil.png" width="100px" height="100px" />
+            <h3>MI AL-MUBAROKAH</h3>
+            <span class="date">2016 - 2023</span>
+            <p>I-VI - keagamaan</p>
+            <p>
+              <strong>MI AL-MUBAROKAH</strong> Adalah sekolah dasar yang berada di kp.cicadas
+              rt 01, rw 18,desa sukamanah,kab.bandung barat.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pendidikan" style="background-color: #fff">
+      <div class="section-title"></div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-card">
+            <img src="assets/img/yuk.png" width="100px" height="100px" />
+            <h3>SMP NAZWA ASY-SYARIF</h3>
+            <span class="date">2023 - 2025</span>
+            <p>VII-IX - keagamaan</p>
+            <p>
+             <strong>SMP NAZWA ASY-SYARIF</strong> Adalah sekolah menengah yang berada di
+              kp.cikawung rt 6, rw 10,desa sukamanah,kab.bandung barat.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pendidikan" style="background-color: #fff">
+      <div class="section-title"></div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-card">
+            <img src="assets/img/ft.jpg" width="100px" height="100px" />
+            <img src="assets/img/ft2.png" width="130px" height="100px" />
+            <h3>SMK NEGERI 1 RONGGA</h3>
+            <span class="date">2025 - 2027</span>
+            <p>X-XII - rekayasa perangkat lunak</p>
+            <p>
+              <strong>strong>SMK NEGRI 1 RONGGA</strong>  adalah sewkolah atas yang berada di kp.cimapag
+              rt8, rw15,desa cibedug,kab.bandung barat.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="layanan" style="background-color: #fff">
+      <div class="section-title">
+        <h2>Layanan</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <i class="fa-solid fa-code"></i>
+          <h3>Pendidikan Online</h3>
+          <p>
+            pembinaan usia dini, peningkatan mutu kompetisi berjenjang, dan
+            pembenahan infrastruktur secara merata.
+          </p>
+        </div>
+        <div class="service-card">
+          <i class="fa-solid fa-chart-line"></i>
+          <h3>Dashboard & Analytics pendidikan</h3>
+          <p>sistem berbasis yang dapat di ikuti oleh siapapun dan dimanapun</p>
+        </div>
+        <div class="service-card">
+          <i class="fa-solid fa-gears"></i>
+          <h3>System pendidkan</h3>
+          <p>
+            mencakup sistem pendidikan, sistem kompetisi online, dan sistem
+            tanya jawab di setiap materi.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontak" style="background-color: #fff">
+      <div class="section-title">
+        <h2>Kontak Saya</h2>
+      </div>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div>
+            <i class="fa-solid fa-envelope"></i>
+            <p>mpadil@student.smkn1robgga.sch.id</p>
+          </div>
+          <div>
+            <i class="fa-solid fa-location-dot"></i>
+            <p>Cicadas,Sukamanah,Bandung</p>
+          </div>
+          <div>
+            <i class="fa-brands fa-github"></i>
+            <p>github.com/batunawing</p>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <form id="contactForm">
+            <input type="text" placeholder="Nama Anda" required />
+            <input type="email" placeholder="Email Anda" required />
+            <textarea rows="4" placeholder="Pesan Anda..." required></textarea>
+            <button type="submit" class="btn">Kirim Pesan</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; Copyright Muhamad padil. Wanien.</p>
+    </footer>
+
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Pesan Anda berhasil dikirim!");
+          this.reset();
+        });
+    </script>
+  </body>
+</html>
